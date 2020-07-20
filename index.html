@@ -7,7 +7,12 @@
         <script src="./js/game.js"></script>
     </head>
     
-    
+<body onload="startGame(setup)">
+<script>
+
+
+</script>
+
 <div id=scenario></div>
 </br>
 </br>
@@ -25,357 +30,36 @@
 
 </div>
 
-</br>
-</br>
 
 <div align="center">
-    <button onclick="document.getElementById(setup.coderPosition).innerHTML = 2">turn clock</button>
-    <button onclick="document.getElementById(setup.coderPosition).innerHTML = 3">turn counter-clock</button>
-    <button onclick="document.getElementById(setup.coderPosition).innerHTML = 1">Andar</button>
-    <button onclick="delCode(setup)">Branco</button>
+    
+    <button onclick="addFunction('rotateCounterClock')" style="background-image: url('./assets/left.png'); background-size: cover; height: 40px; width: 40px;"></button>
+    <button onclick="addFunction('move')" style="background-image: url('./assets/forward.png'); background-size: cover; height: 40px; width: 40px;"></button>
+    <button onclick="addFunction('rotateClock')" style="background-image: url('./assets/right.png'); background-size: cover; height: 40px; width: 40px;"></button>
+    
     </br>
     </br>
-    <button onclick="addCollor(setup, 'red')">Vermelho</button>
-    <button onclick="addCollor(setup, 'blue')">Azul</button>
-    <button onclick="addCollor(setup, 'green')">Verde</button>
+    <button onclick="delCode(setup)" style="background-color: silver; background-size: cover; height: 40px; width: 40px;"></button>
+    <button onclick="addCollor(setup, 'red')" style="background-color: red; background-size: cover; height: 40px; width: 40px;"></button>
+    <button onclick="addCollor(setup, 'blue')" style="background-color:blue; background-size: cover; height: 40px; width: 40px;"></button>
+    <button onclick="addCollor(setup, 'green')" style="background-color: green; background-size: cover; height: 40px; width: 40px;"></button>
     </br>
     </br>
-    <button onclick="document.getElementById(setup.coderPosition).innerHTML = 4">F1</button>
-    <button onclick="document.getElementById(setup.coderPosition).innerHTML = 5">F2</button>
-    <button onclick="document.getElementById(setup.coderPosition).innerHTML = 6">F3</button>
-    <button onclick="document.getElementById(setup.coderPosition).innerHTML = 7">F4</button>
-    <button onclick="document.getElementById(setup.coderPosition).innerHTML = 8">F5</button>
+    <button onclick="addFunction('f1')" style="background-image: url('./assets/f1.png'); background-size: cover; height: 40px; width: 40px;"></button>
+    <button onclick="addFunction('f2')" style="background-image: url('./assets/f2.png'); background-size: cover; height: 40px; width: 40px;"></button>
+    <button onclick="addFunction('f3')" style="background-image: url('./assets/f3.png'); background-size: cover; height: 40px; width: 40px;"></button>
+    <button onclick="addFunction('f4')" style="background-image: url('./assets/f4.png'); background-size: cover; height: 40px; width: 40px;"></button>
+    <button onclick="addFunction('f5')" style="background-image: url('./assets/f5.png'); background-size: cover; height: 40px; width: 40px;"></button>
 
 </div>
 </br>
 
 
 
-<script>
 
-    //Settings
-
-    var setup = {
-
-        "scenarioLines": 12,
-        "scenarioCollums": 10,
-        "scenarioBlockWidth": 26,
-        "scenarioBlockHeight": 28,
-        "scenarioId": "td",
-        "coderSpaceId": "coderSpaceTable",
-        "coderPosition": "coderSpaceTable" + "Cell0_1",
-        "speed": 1500,
-        "runnerPosition": [5, 0],
-        "runerDirection": 2,
-        "moveCode": 1,
-        "rotateClockCode": 2,
-        "rotateCounterClockCode": 3,
-        "f1Code": 4,
-        "f2Code": 5,
-        "f3Code": 6,
-        "f4Code": 7,
-        "f5Code": 8
-
-    }
-
-
-
-
-    //Game Init
-
-    startGame(setup);
-
-
-
-    // Functions
-
-    // ------ Map Functions ------
-
-    function startGame(settings) {
-
-        createScenario(settings.scenarioLines, settings.scenarioCollums, settings.scenarioBlockWidth, settings.scenarioBlockHeight, settings.scenarioId);
-        createCoderSpace(settings.coderSpaceId);
-        createCharacter(settings.scenarioId, settings.runnerPosition);
-
-    }
-    // ------ Map Functions ------
-
-    function createScenario(linhas, colunas, largura, altura, scenarioId) {
-        //cria o cenário
-        scenario = "<table align=center border=1 >";
-        for (x = 0; x < linhas; x++) {
-            scenario += "<tr>";
-            for (y = 0; y < colunas; y++)
-                scenario += "<td id=" + scenarioId + x + "_" + y + " style='width:" + largura + "px; height:" + altura + "px;'> </td>";
-            scenario += "</tr>";
-        }
-        document.getElementById('scenario').innerHTML = scenario + "</table>";
-
-    }
-
-    function createCoderSpace(coderSpaceId) {
-        //cria o espaço para inserir código
-        coderSpace = "<table id=" + coderSpaceId + " align=center border=1>";
-        //coderSpace = "<table id=coderSpaceTable align=center border=1>";
-
-        coderSpace += "<tr>";
-
-        for (x = 0; x < 5; x++) {
-            for (y = 0; y < 8; y++) {
-
-                coderSpace += "<td onclick=selectCell(this) id=" + coderSpaceId + "Cell" + x + "_" + y + " style='width:40px; height:40px;'> </td>";
-
-            }
-
-            coderSpace += "</tr>";
-
-            document.getElementById('coderSpace').innerHTML = coderSpace + "</table>";
-
-        }
-    }
-
-    function createCharacter(id, runner) {
-
-        // mudar de $ para img
-        document.getElementById(id + runner[0] + '_' + runner[1]).innerHTML = "$";
-        document.getElementById(id + runner[0] + '_' + runner[1]).style.background = "white";
-
-    }
-
-    function chooseSpeed(speedSet) {
-        speed = speedSet;
-    }
-
-    function startScript(settings) {
-
-        execFunction(settings, 0)
-
-    }
-
-
-    // ------ Actions Functions ------
-
-    function move(settings) {
-
-        // mudar de $ para img
-        document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).innerHTML = "";
-
-        getDirection(settings);
-
-        document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).innerHTML = "$";
-
-        document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background = "white";
-
-    }
-
-    function rotateClock(settings) {
-
-        settings.runerDirection--;
-        settings.runerDirection = Math.abs(settings.runerDirection % 4);
-
-    }
-
-    function rotateCounterClock(settings) {
-
-        settings.runerDirection++;
-        settings.runerDirection = Math.abs(settings.runerDirection % 4);
-
-    }
-
-    function addCollor(settings, color) {
-
-        document.getElementById(settings.coderPosition).style.backgroundColor = color;
-
-    }
-
-    function addFunction(id) {
-
-
-
-    }
-
-
-    function execFunction(settings, id) {
-
-
-        var script = getScript(settings.coderSpaceId, id);
-
-
-        for (i = 0; i < script[0].length; i++) {
-
-
-            if (script[0][i] == settings.moveCode) {
-
-                //setTimeout(move(), speed);
-                //sleep(speed);
-                if (document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background == script[1][i]) {
-
-                    move(settings);
-
-                }
-
-
-            } else if (script[0][i] == settings.rotateClockCode) {
-
-                //setTimeout(rotateClock(), speed);
-
-                if (document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background == script[1][i]) {
-
-                    rotateClock(settings);
-
-                }
-
-            } else if (script[0][i] == settings.rotateCounterClockCode) {
-
-                //setTimeout(rotateCounterClock(), speed);
-
-                if (document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background == script[1][i]) {
-
-                    rotateCounterClock(settings);
-
-                }
-
-            } else if (script[0][i] == settings.f1Code) {
-
-                if (document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background == script[1][i]) {
-                    execFunction(settings, 0);
-                }
-
-            } else if (script[0][i] == settings.f2Code) {
-
-                if (document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background == script[1][i]) {
-                    execFunction(settings, 1);
-                }
-
-            } else if (script[0][i] == settings.f3Code) {
-
-                if (document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background == script[1][i]) {
-
-                    execFunction(settings, 2);
-
-                }
-
-            } else if (script[0][i] == settings.f4Code) {
-
-
-                if (document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background == script[1][i]) {
-
-                    execFunction(settings, 3);
-
-                }
-
-            } else if (script[0][i] == settings.f5Code) {
-
-
-                if (document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background == script[1][i]) {
-
-                    execFunction(settings, 4);
-
-                }
-
-
-            }
-
-
-        }
-
-    }
-
-    function delCode(settings) {
-
-        document.getElementById(settings.coderPosition).style.backgroundColor = "white";
-        document.getElementById(settings.coderPosition).innerHTML = "";
-        //add img
-
-
-    }
-
-
-    // ------ Aux Functions ------
-
-    function getDirection(settings) {
-
-        if (settings.runerDirection == 0) settings.runnerPosition[1]--;
-        if (settings.runerDirection == 1) settings.runnerPosition[0]--;
-        if (settings.runerDirection == 2) settings.runnerPosition[1]++;
-        if (settings.runerDirection == 3) settings.runnerPosition[0]++;
-
-    }
-
-    function selectCell(cel) {
-
-        // mudar de cor para img
-        document.getElementById(setup.coderPosition).style.backgroundColor = "white";
-        setup.coderPosition = cel.id;
-        document.getElementById(setup.coderPosition).style.backgroundColor = "cyan";
-
-
-    }
-
-    function sleep(milliseconds) {
-        const date = Date.now();
-        let currentDate = null;
-        do {
-            currentDate = Date.now();
-        } while (currentDate - date < milliseconds);
-    }
-
-    function getScript(id, r) {
-
-        scriptCode = []
-        scriptColor = []
-
-        script = []
-
-        //gets table
-        var oTable = document.getElementById(id);
-
-        //gets cells of current row  
-        var oCells = oTable.rows.item(r).cells;
-
-        //gets amount of cells of current row
-        var cellLength = oCells.length;
-
-        //loops through each cell in current row
-        for (var j = 0; j < cellLength; j++) {
-
-            // get your cell info here
-            var cellVal = oCells.item(j).innerHTML;
-            var cellCol = oCells.item(j).style.backgroundColor;
-
-            scriptCode.push(cellVal);
-            scriptColor.push(cellCol);
-
-        }
-
-        script.push(scriptCode);
-        script.push(scriptColor);
-
-        console.log(scriptCode[0])
-        return script
-    }
-
-
-
-
-
-    // ------ Standby Functions ------
-
-
-
-    /*Preenche a célula da tabela HTML escolhida pelo usuário ao clicar*/
-    setOnCeil = function (cel, pos) {
-
-
-        cel.innerHTML = actions[1];
-        codePaper[pos] = actions[1];
-
-    }
-
-</script>
 
 
 </body>
 
-</html>
+
 </html>
