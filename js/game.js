@@ -233,8 +233,7 @@ function execFunction(settings, script) {
     } else if (script[0][0] == settings.rotateClockCode) {
 
         //setTimeout(rotateClock(), speed);
-console.log(document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background)
-console.log(script[1][0])
+
         if (document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.backgroundColor == script[1][0]) {
             
             rotateClock(settings);
