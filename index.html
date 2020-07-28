@@ -2,12 +2,15 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+
         <title>Game for TO WIN!</title>
         <script src="./js/game.js"></script>
+        <link rel="stylesheet" href="./css/estilo.css">
     </head>
     
 <body onload="startGame(setup)">
+
 <script>
 
 
@@ -21,35 +24,37 @@
 
 </br>
 </br>
+
 <div align="right">
-    <button onclick="chooseSpeed(900)">1x</button>
-    <button onclick="chooseSpeed(600)">2x</button>
-    <button onclick="chooseSpeed(300)">3x</button>
+
+    <button class="btn" onclick="chooseSpeed(900)">1x</button>
+    <button class="btn" onclick="chooseSpeed(600)">2x</button>
+    <button class="btn" onclick="chooseSpeed(300)">3x</button>
     </br>
-    <button onclick="startScript(setup)">GO!</button>
+    <button class="btn" onclick="startScript(setup)">GO!</button>
 
 </div>
 
 
 <div align="center">
     
-    <button onclick="addFunction('rotateCounterClock')" style="background-image: url('./assets/left.png'); background-size: cover; height: 40px; width: 40px;"></button>
-    <button onclick="addFunction('move')" style="background-image: url('./assets/forward.png'); background-size: cover; height: 40px; width: 40px;"></button>
-    <button onclick="addFunction('rotateClock')" style="background-image: url('./assets/right.png'); background-size: cover; height: 40px; width: 40px;"></button>
+    <button id="btn-left" onclick="addFunction('rotateCounterClock')"></button>
+    <button id="btn-forward" onclick="addFunction('move')"></button>
+    <button id="btn-right" onclick="addFunction('rotateClock')"></button>
     
     </br>
     </br>
-    <button onclick="delCode(setup)" style="background-color: silver; background-size: cover; height: 40px; width: 40px;"></button>
-    <button onclick="addCollor(setup, 'red')" style="background-color: red; background-size: cover; height: 40px; width: 40px;"></button>
-    <button onclick="addCollor(setup, 'blue')" style="background-color:blue; background-size: cover; height: 40px; width: 40px;"></button>
-    <button onclick="addCollor(setup, 'green')" style="background-color: green; background-size: cover; height: 40px; width: 40px;"></button>
+    <button id="delCode" onclick="delCode(setup)"></button>
+    <button id="squareRed" onclick="addCollor(setup, 'red')"></button>
+    <button id="squareBlue" onclick="addCollor(setup, 'blue')"></button>
+    <button id="squareGreen" onclick="addCollor(setup, 'green')"></button>
     </br>
     </br>
-    <button onclick="addFunction('f1')" style="background-image: url('./assets/f1.png'); background-size: cover; height: 40px; width: 40px;"></button>
-    <button onclick="addFunction('f2')" style="background-image: url('./assets/f2.png'); background-size: cover; height: 40px; width: 40px;"></button>
-    <button onclick="addFunction('f3')" style="background-image: url('./assets/f3.png'); background-size: cover; height: 40px; width: 40px;"></button>
-    <button onclick="addFunction('f4')" style="background-image: url('./assets/f4.png'); background-size: cover; height: 40px; width: 40px;"></button>
-    <button onclick="addFunction('f5')" style="background-image: url('./assets/f5.png'); background-size: cover; height: 40px; width: 40px;"></button>
+    <button id="btn-f1" onclick="addFunction('f1')"></button>
+    <button id="btn-f2" onclick="addFunction('f2')"></button>
+    <button id="btn-f3" onclick="addFunction('f3')"></button>
+    <button id="btn-f4" onclick="addFunction('f4')"></button>
+    <button id="btn-f5" onclick="addFunction('f5')"></button>
 
 </div>
 </br>
