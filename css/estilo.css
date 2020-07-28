@@ -84,3 +84,10 @@ td {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+body {
+    background: url('../assets/background.png');
+    font-family:sans-serif;
+    font-size:120%;
+   }
+   
