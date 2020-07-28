@@ -18,7 +18,7 @@ var setup = {
     "speed": 1500,
     "runnerPosition": [5, 0],
     "runerDirection": 20002, //gambi das brabas
-    "runnerImageUrl": "url('./assets/warriorF.jpg')",
+    "runnerImageUrl": "url('./assets/pac-manaF.png')",
     "moveCode": 1,
     "rotateClockCode": 2,
     "rotateCounterClockCode": 3,
@@ -102,11 +102,9 @@ function createCharacter(id, runner) {
     // mudar de $ para img
 
 
-    document.getElementById(id + runner[0] + '_' + runner[1]).style.backgroundImage = "url('./assets/warriorF.jpg')";
+    document.getElementById(id + runner[0] + '_' + runner[1]).style.backgroundImage = "url('./assets/pac-manaF.png')";
     //document.getElementById(id + runner[0] + '_' + runner[1]).innerHTML = "1"
-    // setar isso no css !!!!!!!!!!
-    document.getElementById(id + runner[0] + '_' + runner[1]).style.backgroundRepeat = "no-repeat";
-    document.getElementById(id + runner[0] + '_' + runner[1]).style.backgroundPosition = "center";
+    
     //document.getElementById(id + runner[0] + '_' + runner[1]).style.backgroundColor = "white";
 
 }
@@ -233,8 +231,7 @@ function execFunction(settings, script) {
     } else if (script[0][0] == settings.rotateClockCode) {
 
         //setTimeout(rotateClock(), speed);
-console.log(document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background)
-console.log(script[1][0])
+
         if (document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.backgroundColor == script[1][0]) {
             
             rotateClock(settings);
@@ -344,10 +341,10 @@ function getRotation(settings) {
 
     //settings.runerDirection 
 
-    if (Math.abs(settings.runerDirection % 4) == 0) settings.runnerImageUrl = "url('./assets/warriorB.jpg')";
-    if (Math.abs(settings.runerDirection % 4) == 1) settings.runnerImageUrl = "url('./assets/warriorU.jpg')";;
-    if (Math.abs(settings.runerDirection % 4) == 2) settings.runnerImageUrl = "url('./assets/warriorF.jpg')";
-    if (Math.abs(settings.runerDirection % 4) == 3) settings.runnerImageUrl = "url('./assets/warriorD.jpg')";
+    if (Math.abs(settings.runerDirection % 4) == 0) settings.runnerImageUrl = "url('./assets/pac-manaB.png')";
+    if (Math.abs(settings.runerDirection % 4) == 1) settings.runnerImageUrl = "url('./assets/pac-manaU.png')";;
+    if (Math.abs(settings.runerDirection % 4) == 2) settings.runnerImageUrl = "url('./assets/pac-manaF.png')";
+    if (Math.abs(settings.runerDirection % 4) == 3) settings.runnerImageUrl = "url('./assets/pac-manaD.png')";
 
 }
 

@@ -1,0 +1,86 @@
+@media only screen and (max-device-width: 900px) {
+    /* .menu { width:100%; } */
+}
+
+@media screen and (max-width: 480px) {
+    
+}
+
+div button{
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+}
+
+#btn-left{
+    background-image: url('../assets/left.png');    
+}
+
+#btn-forward{
+    background-image: url('../assets/forward.png');
+}
+
+#btn-right{
+    background-image: url('../assets/right.png');
+}
+
+#btn-f1{
+    background-image: url('../assets/f1.png')
+}
+
+#btn-f2{
+    background-image: url('../assets/f2.png')
+}
+
+#btn-f3{
+    background-image: url('../assets/f3.png')
+}
+
+#btn-f4{
+    background-image: url('../assets/f4.png')
+}
+
+#btn-f5{
+    background-image: url('../assets/f5.png')
+}
+
+#delCode{
+    background-color: silver;
+}
+
+#squareRed{
+    background-color: red;
+}
+
+#squareBlue{
+    background-color: blue;
+}
+
+#squareGreen{
+    background-color: green;
+}
+
+
+.btn {
+    box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+	border-radius:6px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:5px 7px;
+	text-decoration:none;
+    text-shadow:0px -1px 0px #2b665e;
+    margin-right: 1px;
+    margin-bottom: 5px;
+  }
+
+td {
+    background-repeat: no-repeat;
+    background-position: center;
+}
