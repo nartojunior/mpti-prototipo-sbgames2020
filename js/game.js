@@ -5,7 +5,7 @@
 var setup = {
 
     "scenarioLines": 12,
-    "scenarioCollums": 10,
+    "scenarioCollums": 12,
     "scenarioBlockWidth": 26,
     "scenarioBlockHeight": 28,
     "scenarioId": "td",
@@ -16,7 +16,7 @@ var setup = {
     "functionsWidth": 40,
     "functionsHeigth": 40,
     "speed": 1500,
-    "runnerPosition": [5, 0],
+    "runnerPosition": [5, 1],
     "runerDirection": 20002, //gambi das brabas
     "runnerImageUrl": "url('./assets/pac-manaF.png')",
     "moveCode": 1,
@@ -26,9 +26,51 @@ var setup = {
     "f2Code": 5,
     "f3Code": 6,
     "f4Code": 7,
-    "f5Code": 8
-
+    "f5Code": 8,
+    "level": [["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
+    ["h", "b", "b", "b", "b", "b", "b", "b", "b", "b", "r", "h"],
+    ["h", "b", "b", "b", "b", "b", "b", "b", "b", "b", "r", "h"],
+    ["h", "b", "b", "b", "h", "b", "b", "b", "b", "b", "r", "h"],
+    ["h", "b", "b", "b", "b", "b", "b", "b", "b", "b", "r", "h"],
+    ["h", "b", "b", "b", "b", "b", "g", "b", "b", "b", "r", "h"],
+    ["h", "b", "b", "b", "h", "b", "b", "b", "b", "b", "r", "h"],
+    ["h", "b", "b", "b", "b", "b", "b", "b", "b", "b", "r", "h"],
+    ["h", "b", "b", "b", "b", "b", "h", "b", "b", "b", "r", "h"],
+    ["h", "b", "b", "b", "b", "b", "b", "h", "b", "b", "r", "h"],
+    ["h", "b", "b", "b", "b", "b", "b", "b", "b", "b", "r", "h"],
+    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
+    ],
+    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+    ["_", "_", "_", "_", "*", "_", "_", "_", "_", "_", "_", "_"],
+    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+    ],
+    "starImageUrl": "url('./assets/star.png')",
+    "starCount": 1,
+    "manaCount": 100
 }
+
+var level = [["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"],
+["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"],
+["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"],
+["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"],
+["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"],
+["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"],
+["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"],
+["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"],
+["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"],
+["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"],
+["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"],
+["r", "r", "r", "r", "r", "r", "r", "r", "r", "r"]
+];
 
 //Game Init
 
@@ -43,7 +85,10 @@ function startGame(settings) {
 
     createScenario(settings.scenarioLines, settings.scenarioCollums, settings.scenarioBlockWidth, settings.scenarioBlockHeight, settings.scenarioId);
     createCoderSpace(settings.coderSpaceId, settings.numOfFunctions, settings.functionLength, settings.functionsWidth, settings.functionsHeigth);
+    createLevel(settings.level, settings.scenarioLines, settings.scenarioCollums, settings.scenarioId)
+
     createCharacter(settings.scenarioId, settings.runnerPosition);
+    addStars(settings.stars, settings.scenarioId, settings.starImageUrl);
 
 }
 
@@ -63,6 +108,7 @@ function createScenario(linhas, colunas, largura, altura, scenarioId) {
     document.getElementById('scenario').innerHTML = scenario + "</table>";
     //console.log(document.getElementById('scenario'))
 
+
 }
 
 function createCoderSpace(coderSpaceId, numOfFunctions, functionsLength, largura, altura) {
@@ -79,7 +125,7 @@ function createCoderSpace(coderSpaceId, numOfFunctions, functionsLength, largura
 
             coderSpace += "<td onclick=selectCell(" + cellId + ") id=" + cellId + " style='width:" + largura + "px; height:" + altura + "px; background-color: silver '> </td>";
             //coderSpace += "<td onclick=selectCell(" + cellId + "," + 2 + ") id=" + cellId + " style='width:" + largura + "px; height:" + altura + "px;'> </td>";
-            
+
 
         }
 
@@ -89,11 +135,11 @@ function createCoderSpace(coderSpaceId, numOfFunctions, functionsLength, largura
 
     }
 
-    for (i = 0; i < 5 ; i++) {
-        n =  i + 1
+    for (i = 0; i < 5; i++) {
+        n = i + 1
         window.document.getElementById("coderSpaceTableCell" + i + "_0").style.backgroundImage = "url('./assets/f" + n + ".png')";
         window.document.getElementById("coderSpaceTableCell" + i + "_0").style.backgroundSize = "cover";
-    
+
     }
 }
 
@@ -104,7 +150,7 @@ function createCharacter(id, runner) {
 
     document.getElementById(id + runner[0] + '_' + runner[1]).style.backgroundImage = "url('./assets/pac-manaF.png')";
     //document.getElementById(id + runner[0] + '_' + runner[1]).innerHTML = "1"
-    
+
     //document.getElementById(id + runner[0] + '_' + runner[1]).style.backgroundColor = "white";
 
 }
@@ -117,10 +163,64 @@ function startScript(settings) {
 
     var script = getScript(settings.coderSpaceId, 0);
     //console.log(script)
-    execFunction(settings, script)
+    execFunction(settings, script);
+    
+    
+        console.log("aki " + settings.starCount)
+        setTimeout(function () { if (settings.starCount != 0) lost(settings, true) }, 2100);
+        console.log("ali " +settings.starCount)
+    
 
 }
 
+function createLevel(level, linhas, colunas, scenarioId) {
+
+    for (x = 0; x < linhas; x++) {
+        for (y = 0; y < colunas; y++) {
+
+            if (level[x][y] == "r") {
+
+                id = scenarioId + x + "_" + y
+                document.getElementById(id).style.backgroundColor = "red";
+
+
+            } else if (level[x][y] == "b") {
+
+                id = scenarioId + x + "_" + y
+                document.getElementById(id).style.backgroundColor = "blue";
+
+            } else if (level[x][y] == "g") {
+
+                id = scenarioId + x + "_" + y
+                document.getElementById(id).style.backgroundColor = "green";
+
+            } else if (level[x][y] == "s") {
+
+                id = scenarioId + x + "_" + y
+                document.getElementById(id).style.backgroundColor = "silver";
+
+            } else if (level[x][y] == "h") {
+
+                id = scenarioId + x + "_" + y
+                document.getElementById(id).style.visibility = "hidden";
+
+            }
+        }
+    }
+}
+
+function addStars(stars, scenarioId, starImageUrl) {
+
+    for (x = 0; x < 12; x++) {
+        for (y = 0; y < 12; y++) {
+
+            if (stars[x][y] == "*") {
+                id = scenarioId + x + "_" + y
+                document.getElementById(id).style.backgroundImage = starImageUrl;
+            }
+        }
+    }
+}
 
 // ------ Actions Functions ------
 
@@ -134,7 +234,9 @@ function move(settings) {
     document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.backgroundImage = settings.runnerImageUrl;
 
     //document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background = "white";
-
+    colisions(settings);
+    win(settings);
+    lost(settings, false);
 }
 
 function rotateClock(settings) {
@@ -164,13 +266,13 @@ function addCollor(settings, color) {
 function addFunction(id) {
 
     if (id == "move") {
-        
+
         document.getElementById(setup.coderPosition).innerHTML = 1;
         document.getElementById(setup.coderPosition).style.backgroundImage = "url('./assets/forward.png')";
         document.getElementById(setup.coderPosition).style.backgroundSize = "cover";
-    
+
     } else if (id == "rotateClock") {
-        
+
         document.getElementById(setup.coderPosition).innerHTML = 2;
         document.getElementById(setup.coderPosition).style.backgroundImage = "url('./assets/right.png')";
         document.getElementById(setup.coderPosition).style.backgroundSize = "cover";
@@ -181,31 +283,31 @@ function addFunction(id) {
         document.getElementById(setup.coderPosition).style.backgroundImage = "url('./assets/left.png')";
         document.getElementById(setup.coderPosition).style.backgroundSize = "cover";
 
-    }  else if (id == "f1") {
+    } else if (id == "f1") {
 
         document.getElementById(setup.coderPosition).innerHTML = 4;
         document.getElementById(setup.coderPosition).style.backgroundImage = "url('./assets/f1.png')";
         document.getElementById(setup.coderPosition).style.backgroundSize = "cover";
 
-    }  else if (id == "f2") {
+    } else if (id == "f2") {
 
         document.getElementById(setup.coderPosition).innerHTML = 5;
         document.getElementById(setup.coderPosition).style.backgroundImage = "url('./assets/f2.png')";
         document.getElementById(setup.coderPosition).style.backgroundSize = "cover";
 
-    }  else if (id == "f3") {
+    } else if (id == "f3") {
 
         document.getElementById(setup.coderPosition).innerHTML = 6;
         document.getElementById(setup.coderPosition).style.backgroundImage = "url('./assets/f3.png')";
         document.getElementById(setup.coderPosition).style.backgroundSize = "cover";
 
-    }  else if (id == "f4") {
+    } else if (id == "f4") {
 
         document.getElementById(setup.coderPosition).innerHTML = 7;
         document.getElementById(setup.coderPosition).style.backgroundImage = "url('./assets/f4.png')";
         document.getElementById(setup.coderPosition).style.backgroundSize = "cover";
 
-    }  else if (id == "f5") {
+    } else if (id == "f5") {
 
         document.getElementById(setup.coderPosition).innerHTML = 8;
         document.getElementById(setup.coderPosition).style.backgroundImage = "url('./assets/f5.png')";
@@ -233,7 +335,7 @@ function execFunction(settings, script) {
         //setTimeout(rotateClock(), speed);
 
         if (document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.backgroundColor == script[1][0]) {
-            
+
             rotateClock(settings);
 
         }
@@ -296,9 +398,9 @@ function execFunction(settings, script) {
 
     if (script[0].length > 0) {
 
-        
+
         setTimeout(function () { execFunction(settings, script); }, 300)
-        
+
 
     }
 
@@ -315,6 +417,49 @@ function delCode(settings) {
 
 }
 
+function lost(settings, perdeu) {
+
+    id = settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1];
+    
+    if (document.getElementById(id).style.visibility == 'hidden' || perdeu) {
+        settings.starCount = 0;
+        settings.runnerPosition = [5, 1];
+        settings.runerDirection = 20002;
+        settings.runnerImageUrl = "url('./assets/pac-manaF.png')";
+        settings.starCount = 1; 
+
+        createScenario(settings.scenarioLines, settings.scenarioCollums, settings.scenarioBlockWidth, settings.scenarioBlockHeight, settings.scenarioId);
+
+        createLevel(settings.level, settings.scenarioLines, settings.scenarioCollums, settings.scenarioId)
+
+        createCharacter(settings.scenarioId, settings.runnerPosition);
+        addStars(settings.stars, settings.scenarioId, settings.starImageUrl);
+        window.alert("Perdeu Playboy!")
+    }
+
+}
+
+function win(settings) {
+    if (settings.starCount == 0) {
+        manaUpdate(settings);
+        alert('venceu')
+    }
+}
+
+function colisions(settings) {
+
+    x = settings.runnerPosition[0]
+    y = settings.runnerPosition[1]
+
+    if (settings.stars[x][y] == "*") {
+        settings.starCount = settings.starCount - 1
+    }
+
+}
+
+function stopScript(settings) {
+    lost(settings, true)
+}
 
 // ------ Aux Functions ------
 
@@ -387,12 +532,25 @@ function getScript(id, r) {
     script.push(scriptCode);
     script.push(scriptColor);
 
-    
+
     return script
 }
 
 
-
+function manaUpdate(settings) {
+    
+    for (x = 0; x < 5; x++) {
+        script = getScript(settings.coderSpaceId, x);
+        for (y = 0; y < 7; y++) {
+            console.log(x + script[0][y])
+            if (script[0][y] != " ") {
+                settings.manaCount-- 
+            }
+        }
+        
+    }
+    
+}
 
 // ------ Standby Functions ------
 
