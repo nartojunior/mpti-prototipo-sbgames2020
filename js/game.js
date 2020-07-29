@@ -457,6 +457,9 @@ function colisions(settings) {
 
 }
 
+function stopScript(settings) {
+    lost(settings, true)
+}
 
 // ------ Aux Functions ------
 
