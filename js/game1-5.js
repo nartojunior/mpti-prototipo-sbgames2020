@@ -1,9 +1,7 @@
-
 //Settings
 
 //Game setup JSON
 
-var level = 0;
 
 
 var level1 = {
@@ -158,7 +156,7 @@ var level3 = {
     ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
     ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
     ],
-    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
     ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
     ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
     ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
@@ -292,586 +290,9 @@ var level5 = {
     "manaCount": 100
 }
 
-var level6 = {
 
-    "scenarioLines": 12,
-    "scenarioCollums": 12,
-    "scenarioBlockWidth": 26,
-    "scenarioBlockHeight": 28,
-    "scenarioId": "td",
-    "coderSpaceId": "coderSpaceTable",
-    "coderPosition": "coderSpaceTable" + "Cell0_1",
-    "numOfFunctions": 5,
-    "functionLength": 8,
-    "functionsWidth": 40,
-    "functionsHeigth": 40,
-    "speed": 1500,
-    "runnerPosition": [1, 4],
-    "runerDirection": 20002, //gambi das brabas
-    "runnerImageUrl": "url('./assets/pac-manaF.png')",
-    "moveCode": 1,
-    "rotateClockCode": 2,
-    "rotateCounterClockCode": 3,
-    "f1Code": 4,
-    "f2Code": 5,
-    "f3Code": 6,
-    "f4Code": 7,
-    "f5Code": 8,
-    "level": [["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "r", "b", "b", "b", "b", "g", "h", "h", "h"],
-    ["h", "h", "h", "r", "b", "b", "b", "b", "g", "h", "h", "h"],
-    ["h", "h", "h", "r", "b", "b", "b", "b", "g", "h", "h", "h"],
-    ["h", "h", "h", "r", "b", "b", "b", "b", "g", "h", "h", "h"],
-    ["h", "h", "h", "r", "b", "b", "b", "b", "g", "h", "h", "h"],
-    ["h", "h", "h", "r", "b", "b", "b", "b", "g", "h", "h", "h"],
-    ["h", "h", "h", "r", "b", "b", "b", "b", "g", "h", "h", "h"],
-    ["h", "h", "h", "r", "b", "b", "b", "b", "g", "h", "h"],
-    ["h", "h", "h", "r", "b", "b", "b", "b", "g", "h", "h", "h"],
-    ["h", "h", "h", "r", "b", "b", "b", "b", "g", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
-    ],
-    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "*", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "*", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "*", "_", "*", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "*", "_", "*", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "*", "_", "*", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "*", "_", "*", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "*", "_", "*", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "*", "_", "*", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "*", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "*", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
-    ],
-    "starImageUrl": "url('./assets/star.png')",
-    "starCount": 1,
-    "manaCount": 100
-}
 
-var level7 = {
-
-    "scenarioLines": 12,
-    "scenarioCollums": 12,
-    "scenarioBlockWidth": 26,
-    "scenarioBlockHeight": 28,
-    "scenarioId": "td",
-    "coderSpaceId": "coderSpaceTable",
-    "coderPosition": "coderSpaceTable" + "Cell0_1",
-    "numOfFunctions": 5,
-    "functionLength": 8,
-    "functionsWidth": 40,
-    "functionsHeigth": 40,
-    "speed": 1500,
-    "runnerPosition": [6, 6],
-    "runerDirection": 20002, //gambi das brabas
-    "runnerImageUrl": "url('./assets/pac-manaF.png')",
-    "moveCode": 1,
-    "rotateClockCode": 2,
-    "rotateCounterClockCode": 3,
-    "f1Code": 4,
-    "f2Code": 5,
-    "f3Code": 6,
-    "f4Code": 7,
-    "f5Code": 8,
-    "level": [["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "b", "b", "g", "b", "g", "b", "b", "h", "h", "h"],
-    ["h", "h", "b", "h", "h", "h", "h", "h", "b", "h", "h", "h"],
-    ["h", "h", "b", "b", "b", "h", "b", "b", "b", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
-    ],
-    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "*", "_", "_", "*", "_", "_", "*", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "*", "_", "*", "_", "_", "_", "*", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
-    ],
-    "starImageUrl": "url('./assets/star.png')",
-    "starCount": 1,
-    "manaCount": 100
-}
-
-var level8 = {
-
-    "scenarioLines": 12,
-    "scenarioCollums": 12,
-    "scenarioBlockWidth": 26,
-    "scenarioBlockHeight": 28,
-    "scenarioId": "td",
-    "coderSpaceId": "coderSpaceTable",
-    "coderPosition": "coderSpaceTable" + "Cell0_1",
-    "numOfFunctions": 5,
-    "functionLength": 8,
-    "functionsWidth": 40,
-    "functionsHeigth": 40,
-    "speed": 1500,
-    "runnerPosition": [7, 6],
-    "runerDirection": 20002, //gambi das brabas
-    "runnerImageUrl": "url('./assets/pac-manaF.png')",
-    "moveCode": 1,
-    "rotateClockCode": 2,
-    "rotateCounterClockCode": 3,
-    "f1Code": 4,
-    "f2Code": 5,
-    "f3Code": 6,
-    "f4Code": 7,
-    "f5Code": 8,
-    "level": [["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "h"],
-    ["h", "r", "b", "b", "b", "b", "b", "r", "r", "b", "r", "h"],
-    ["h", "r", "b", "b", "b", "b", "r", "r", "b", "b", "r", "h"],
-    ["h", "r", "b", "b", "b", "r", "g", "b", "b", "b", "r", "h"],
-    ["h", "r", "b", "b", "r", "r", "b", "b", "b", "b", "r", "h"],
-    ["h", "r", "b", "r", "r", "b", "b", "b", "b", "b", "r", "h"],
-    ["h", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
-    ],
-    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "_"],
-    ["_", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "_"],
-    ["_", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "_"],
-    ["_", "*", "*", "*", "*", "*", "_", "*", "*", "*", "*", "_"],
-    ["_", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "_"],
-    ["_", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "_"],
-    ["_", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
-    ],
-    "starImageUrl": "url('./assets/star.png')",
-    "starCount": 1,
-    "manaCount": 100
-}
-
-var level9 = {
-
-    "scenarioLines": 12,
-    "scenarioCollums": 12,
-    "scenarioBlockWidth": 26,
-    "scenarioBlockHeight": 28,
-    "scenarioId": "td",
-    "coderSpaceId": "coderSpaceTable",
-    "coderPosition": "coderSpaceTable" + "Cell0_1",
-    "numOfFunctions": 5,
-    "functionLength": 8,
-    "functionsWidth": 40,
-    "functionsHeigth": 40,
-    "speed": 1500,
-    "runnerPosition": [5, 5],
-    "runerDirection": 20002, //gambi das brabas
-    "runnerImageUrl": "url('./assets/pac-manaF.png')",
-    "moveCode": 1,
-    "rotateClockCode": 2,
-    "rotateCounterClockCode": 3,
-    "f1Code": 4,
-    "f2Code": 5,
-    "f3Code": 6,
-    "f4Code": 7,
-    "f5Code": 8,
-    "level": [["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "b", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "g", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "b", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "b", "h", "h", "h", "h", "h", "h"],
-    ["h", "b", "g", "b", "b", "r", "b", "b", "g", "b", "h", "h"],
-    ["h", "h", "h", "h", "h", "b", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "b", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "g", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "b", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
-    ],
-    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "*", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "*", "_", "_", "_", "_", "_", "_", "_", "*", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "*", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
-    ],
-    "starImageUrl": "url('./assets/star.png')",
-    "starCount": 1,
-    "manaCount": 100
-}
-
-var level10 = {
-
-    "scenarioLines": 12,
-    "scenarioCollums": 12,
-    "scenarioBlockWidth": 26,
-    "scenarioBlockHeight": 28,
-    "scenarioId": "td",
-    "coderSpaceId": "coderSpaceTable",
-    "coderPosition": "coderSpaceTable" + "Cell0_1",
-    "numOfFunctions": 5,
-    "functionLength": 8,
-    "functionsWidth": 40,
-    "functionsHeigth": 40,
-    "speed": 1500,
-    "runnerPosition": [5, 6],
-    "runerDirection": 20002, //gambi das brabas
-    "runnerImageUrl": "url('./assets/pac-manaF.png')",
-    "moveCode": 1,
-    "rotateClockCode": 2,
-    "rotateCounterClockCode": 3,
-    "f1Code": 4,
-    "f2Code": 5,
-    "f3Code": 6,
-    "f4Code": 7,
-    "f5Code": 8,
-    "level": [["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "r", "r", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "g", "b", "b", "r", "b", "r", "b", "g", "b", "h"],
-    ["h", "h", "b", "g", "h", "b", "b", "b", "g", "b", "b", "h"],
-    ["h", "h", "r", "b", "h", "g", "b", "g", "b", "r", "r", "h"],
-    ["h", "h", "b", "r", "h", "b", "h", "h", "g", "b", "b", "h"],
-    ["h", "h", "r", "b", "h", "b", "g", "b", "b", "b", "r", "h"],
-    ["h", "h", "b", "r", "h", "h", "h", "h", "h", "g", "b", "h"],
-    ["h", "h", "r", "b", "g", "b", "r", "b", "r", "b", "g", "h"],
-    ["h", "h", "b", "g", "b", "r", "b", "r", "b", "r", "b", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
-    ],
-    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "*", "*", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "*", "_", "_", "*", "_", "*", "_", "*", "_", "_"],
-    ["_", "_", "_", "*", "_", "_", "_", "_", "*", "_", "_", "_"],
-    ["_", "_", "*", "_", "_", "*", "_", "*", "_", "*", "*", "_"],
-    ["_", "_", "_", "*", "_", "_", "_", "_", "*", "_", "_", "_"],
-    ["_", "_", "*", "_", "_", "_", "*", "_", "_", "_", "*", "_"],
-    ["_", "_", "_", "*", "_", "_", "_", "_", "_", "*", "_", "_"],
-    ["_", "_", "*", "_", "*", "_", "*", "_", "*", "_", "*", "_"],
-    ["_", "_", "_", "*", "_", "*", "_", "*", "_", "*", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
-    ],
-    "starImageUrl": "url('./assets/star.png')",
-    "starCount": 1,
-    "manaCount": 100
-}
-
-var level11 = {
-
-    "scenarioLines": 12,
-    "scenarioCollums": 12,
-    "scenarioBlockWidth": 26,
-    "scenarioBlockHeight": 28,
-    "scenarioId": "td",
-    "coderSpaceId": "coderSpaceTable",
-    "coderPosition": "coderSpaceTable" + "Cell0_1",
-    "numOfFunctions": 5,
-    "functionLength": 8,
-    "functionsWidth": 40,
-    "functionsHeigth": 40,
-    "speed": 1500,
-    "runnerPosition": [6, 5],
-    "runerDirection": 20002, //gambi das brabas
-    "runnerImageUrl": "url('./assets/pac-manaF.png')",
-    "moveCode": 1,
-    "rotateClockCode": 2,
-    "rotateCounterClockCode": 3,
-    "f1Code": 4,
-    "f2Code": 5,
-    "f3Code": 6,
-    "f4Code": 7,
-    "f5Code": 8,
-    "level": [["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "b", "b", "b", "b", "b", "b", "b", "b", "b", "h", "h"],
-    ["h", "b", "h", "b", "h", "b", "h", "b", "h", "b", "h", "h"],
-    ["h", "b", "b", "r", "b", "b", "b", "r", "b", "b", "h", "h"],
-    ["h", "b", "h", "b", "h", "b", "h", "b", "h", "b", "h", "h"],
-    ["h", "b", "b", "b", "b", "g", "b", "b", "b", "b", "h", "h"],
-    ["h", "b", "h", "b", "h", "b", "h", "b", "h", "b", "h", "h"],
-    ["h", "b", "b", "r", "b", "b", "b", "r", "b", "b", "h", "h"],
-    ["h", "b", "h", "b", "h", "b", "h", "b", "h", "b", "h", "h"],
-    ["h", "b", "b", "b", "b", "b", "b", "b", "b", "b", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
-    ],
-    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "*", "*", "*", "*", "*", "*", "*", "*", "*", "_", "_"],
-    ["_", "*", "_", "*", "_", "*", "_", "*", "_", "*", "_", "_"],
-    ["_", "*", "*", "*", "*", "*", "*", "*", "*", "*", "_", "_"],
-    ["_", "*", "_", "*", "_", "*", "_", "*", "_", "*", "_", "_"],
-    ["_", "*", "*", "*", "*", "_", "*", "*", "*", "*", "_", "_"],
-    ["_", "*", "_", "*", "_", "*", "_", "*", "_", "*", "_", "_"],
-    ["_", "*", "*", "*", "*", "*", "*", "*", "*", "*", "_", "_"],
-    ["_", "*", "_", "*", "_", "*", "_", "*", "_", "*", "_", "_"],
-    ["_", "*", "*", "*", "*", "*", "*", "*", "*", "*", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
-    ],
-    "starImageUrl": "url('./assets/star.png')",
-    "starCount": 1,
-    "manaCount": 100
-}
-
-var level12 = {
-
-    "scenarioLines": 12,
-    "scenarioCollums": 12,
-    "scenarioBlockWidth": 26,
-    "scenarioBlockHeight": 28,
-    "scenarioId": "td",
-    "coderSpaceId": "coderSpaceTable",
-    "coderPosition": "coderSpaceTable" + "Cell0_1",
-    "numOfFunctions": 5,
-    "functionLength": 8,
-    "functionsWidth": 40,
-    "functionsHeigth": 40,
-    "speed": 1500,
-    "runnerPosition": [6, 5],
-    "runerDirection": 20002, //gambi das brabas
-    "runnerImageUrl": "url('./assets/pac-manaF.png')",
-    "moveCode": 1,
-    "rotateClockCode": 2,
-    "rotateCounterClockCode": 3,
-    "f1Code": 4,
-    "f2Code": 5,
-    "f3Code": 6,
-    "f4Code": 7,
-    "f5Code": 8,
-    "level": [["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "b", "b", "b", "b", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "b", "h", "h", "b", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "b", "h", "g", "b", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "b", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "b", "b", "b", "b", "b", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
-    ],
-    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "*", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
-    ],
-    "starImageUrl": "url('./assets/star.png')",
-    "starCount": 1,
-    "manaCount": 100
-}
-
-var level13 = {
-
-    "scenarioLines": 12,
-    "scenarioCollums": 12,
-    "scenarioBlockWidth": 26,
-    "scenarioBlockHeight": 28,
-    "scenarioId": "td",
-    "coderSpaceId": "coderSpaceTable",
-    "coderPosition": "coderSpaceTable" + "Cell0_1",
-    "numOfFunctions": 5,
-    "functionLength": 8,
-    "functionsWidth": 40,
-    "functionsHeigth": 40,
-    "speed": 1500,
-    "runnerPosition": [4, 1],
-    "runerDirection": 20002, //gambi das brabas
-    "runnerImageUrl": "url('./assets/pac-manaF.png')",
-    "moveCode": 1,
-    "rotateClockCode": 2,
-    "rotateCounterClockCode": 3,
-    "f1Code": 4,
-    "f2Code": 5,
-    "f3Code": 6,
-    "f4Code": 7,
-    "f5Code": 8,
-    "level": [["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "b", "b", "b", "b", "b", "b", "b", "r", "b", "b", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "b", "h", "b", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "b", "b", "b", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
-    ],
-    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "*", "*", "*", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "*", "_", "*", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "*", "*", "*", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
-    ],
-    "starImageUrl": "url('./assets/star.png')",
-    "starCount": 1,
-    "manaCount": 100
-}
-
-var level14 = {
-
-    "scenarioLines": 12,
-    "scenarioCollums": 12,
-    "scenarioBlockWidth": 26,
-    "scenarioBlockHeight": 28,
-    "scenarioId": "td",
-    "coderSpaceId": "coderSpaceTable",
-    "coderPosition": "coderSpaceTable" + "Cell0_1",
-    "numOfFunctions": 5,
-    "functionLength": 8,
-    "functionsWidth": 40,
-    "functionsHeigth": 40,
-    "speed": 1500,
-    "runnerPosition": [10, 1],
-    "runerDirection": 20002, //gambi das brabas
-    "runnerImageUrl": "url('./assets/pac-manaF.png')",
-    "moveCode": 1,
-    "rotateClockCode": 2,
-    "rotateCounterClockCode": 3,
-    "f1Code": 4,
-    "f2Code": 5,
-    "f3Code": 6,
-    "f4Code": 7,
-    "f5Code": 8,
-    "level": [["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "r", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "b", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "b", "h", "r", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "b", "h", "b", "h", "h", "h", "h", "h", "h", "r", "h"],
-    ["h", "b", "r", "b", "h", "r", "h", "h", "h", "h", "b", "h"],
-    ["h", "b", "b", "b", "h", "b", "r", "h", "h", "h", "b", "h"],
-    ["h", "b", "b", "b", "h", "b", "b", "h", "h", "r", "b", "h"],
-    ["h", "b", "b", "b", "h", "b", "b", "h", "h", "b", "b", "h"],
-    ["h", "b", "b", "b", "r", "b", "b", "r", "r", "b", "b", "h"],
-    ["h", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
-    ],
-    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "*", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "*", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "-", "*", "_"],
-    ["_", "_", "*", "_", "_", "*", "_", "_", "-", "_", "-", "_"],
-    ["_", "_", "_", "_", "_", "_", "*", "_", "-", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "*", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "*", "_", "_", "*", "*", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
-    ],
-    "starImageUrl": "url('./assets/star.png')",
-    "starCount": 1,
-    "manaCount": 100
-}
-
-var level15 = {
-
-    "scenarioLines": 12,
-    "scenarioCollums": 12,
-    "scenarioBlockWidth": 26,
-    "scenarioBlockHeight": 28,
-    "scenarioId": "td",
-    "coderSpaceId": "coderSpaceTable",
-    "coderPosition": "coderSpaceTable" + "Cell0_1",
-    "numOfFunctions": 5,
-    "functionLength": 8,
-    "functionsWidth": 40,
-    "functionsHeigth": 40,
-    "speed": 1500,
-    "runnerPosition": [1, 2],
-    "runnerPosition0": [1, 2],
-    "runerDirection": 20003, //gambi das brabas
-    "runnerImageUrl": "url('./assets/pac-manaD.png')",
-    "moveCode": 1,
-    "rotateClockCode": 2,
-    "rotateCounterClockCode": 3,
-    "f1Code": 4,
-    "f2Code": 5,
-    "f3Code": 6,
-    "f4Code": 7,
-    "f5Code": 8,
-    "level": [["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "r", "g", "b", "h", "h", "b", "b", "b", "b", "b", "h"],
-    ["h", "r", "g", "b", "h", "h", "b", "r", "r", "r", "b", "h"],
-    ["h", "r", "g", "b", "b", "b", "b", "r", "g", "r", "b", "h"],
-    ["h", "r", "g", "g", "g", "b", "h", "h", "h", "r", "b", "h"],
-    ["h", "r", "r", "r", "g", "b", "h", "h", "h", "r", "b", "h"],
-    ["h", "h", "h", "r", "g", "b", "h", "h", "r", "r", "b", "h"],
-    ["h", "h", "h", "r", "g", "b", "h", "r", "r", "b", "b", "h"],
-    ["h", "h", "h", "r", "g", "b", "b", "r", "b", "r", "r", "h"],
-    ["h", "h", "h", "r", "r", "g", "g", "b", "b", "b", "b", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"],
-    ["h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h", "h"]
-    ],
-    "stars": [["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "*", "_", "_", "_", "_", "*", "*", "*", "_", "_"],
-    ["_", "_", "*", "_", "_", "_", "_", "*", "_", "*", "_", "_"],
-    ["_", "_", "*", "*", "*", "_", "_", "_", "_", "*", "_", "_"],
-    ["_", "_", "_", "_", "*", "_", "_", "_", "-", "*", "-", "_"],
-    ["_", "_", "_", "_", "*", "_", "_", "_", "*", "*", "_", "_"],
-    ["_", "_", "_", "_", "*", "_", "_", "*", "*", "_", "_", "_"],
-    ["_", "_", "_", "_", "*", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-    ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
-    ],
-    "starImageUrl": "url('./assets/star.png')",
-    "starCount": 100,
-    "manaCount": 100
-}
-
-var setup = level1;
-
-var lvls = [
-    level1,
-    level2,
-    level3,
-    level4,
-    level5,
-    level6,
-    level7,
-    level8,
-    level9,
-    level10,
-    level11,
-    level12,
-    level13,
-    level14,
-    level15
-];
+var lvls = [level1, level2, level3, level4, level5];
 //Game Init
 
 // startGame(setup);
@@ -882,7 +303,10 @@ var lvls = [
 // ------ Map Functions ------
 
 function startGame(settings) {
+    console.log("mana")
     console.log(level, settings.manaCount)
+    console.log("settings")
+    console.log(settings)
 
     createScenario(settings.scenarioLines, settings.scenarioCollums, settings.scenarioBlockWidth, settings.scenarioBlockHeight, settings.scenarioId);
     createCoderSpace(settings.coderSpaceId, settings.numOfFunctions, settings.functionLength, settings.functionsWidth, settings.functionsHeigth);
@@ -897,7 +321,7 @@ function startGame(settings) {
 
 function createScenario(linhas, colunas, largura, altura, scenarioId) {
     //cria o cenário
-
+    console.log("cenario ok")
     scenario = "<table align=center border=0 >";
     for (x = 0; x < linhas; x++) {
         scenario += "<tr>";
@@ -907,12 +331,11 @@ function createScenario(linhas, colunas, largura, altura, scenarioId) {
         scenario += "</tr>";
     }
     document.getElementById('scenario').innerHTML = scenario + "</table>";
-    //console.log(document.getElementById('scenario'))
-
 
 }
 
 function createCoderSpace(coderSpaceId, numOfFunctions, functionsLength, largura, altura) {
+    console.log("cs ok")
     //cria o espaço para inserir código
     coderSpace = "<table id=" + coderSpaceId + " align=center border=1>";
     //coderSpace = "<table id=coderSpaceTable align=center border=1>";
@@ -925,8 +348,6 @@ function createCoderSpace(coderSpaceId, numOfFunctions, functionsLength, largura
             cellId = coderSpaceId + "Cell" + x + "_" + y;
 
             coderSpace += "<td onclick=selectCell(" + cellId + ") id=" + cellId + " style='width:" + largura + "px; height:" + altura + "px; background-color: silver '> </td>";
-            //coderSpace += "<td onclick=selectCell(" + cellId + "," + 2 + ") id=" + cellId + " style='width:" + largura + "px; height:" + altura + "px;'> </td>";
-
 
         }
 
@@ -945,7 +366,8 @@ function createCoderSpace(coderSpaceId, numOfFunctions, functionsLength, largura
 }
 
 function createCharacter(id, runner, settings) {
-
+    console.log("criou sc")
+    console.log(id, runner, settings)
     document.getElementById(id + runner[0] + '_' + runner[1]).style.backgroundImage = settings.runnerImageUrl;
 
 }
@@ -957,7 +379,7 @@ function chooseSpeed(speedSet) {
 
 
 function startScript(settings) {
-
+    
     disableBtn(".btn");
 
     var script = getScript(settings.coderSpaceId, 0);
@@ -1115,7 +537,7 @@ scrCount = 0;
 
 function execFunction(settings, script) {
 
-
+    
     const rPColor = document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.backgroundColor
 
     if (script[0][0] == settings.moveCode) {
@@ -1131,7 +553,7 @@ function execFunction(settings, script) {
 
         //setTimeout(rotateClock(), speed);
 
-        if (rPColor == script[1][0] || script[1][0] == 'silver') {
+        if ( rPColor == script[1][0] || script[1][0] == 'silver') {
 
             rotateClock(settings);
 
@@ -1150,7 +572,7 @@ function execFunction(settings, script) {
     } else if (script[0][0] == settings.f1Code) {
 
         if (rPColor == script[1][0] || script[1][0] == 'silver') {
-
+            
             scrCount = scrCount + 7;
             execFunction(settings, getScript(settings.coderSpaceId, 0));
         }
@@ -1187,7 +609,7 @@ function execFunction(settings, script) {
             execFunction(settings, getScript(settings.coderSpaceId, 4));
 
         }
- 
+
 
     }
 
@@ -1203,7 +625,7 @@ function execFunction(settings, script) {
 
 
     } else {
-
+        
         setTimeout(function () { if (settings.starCount != 0) lost(settings, true); enableBtn(".btn") }, (100 + (scrCount * 300)));
     }
 
@@ -1223,13 +645,13 @@ function delCode(settings) {
 function lost(settings, perdeu) {
 
     id = settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1];
-
+    
     if (document.getElementById(id).style.visibility == 'hidden' || perdeu) {
         //settings.starCount = 0; se der errado foi aqui
         settings.runnerPosition = settings.runnerPosition0;
         settings.runerDirection = 20002;
         settings.runnerImageUrl = "url('./assets/pac-manaF.png')";
-        settings.starCount = settings.starCount0;
+        settings.starCount = settings.starCount0; 
 
         createScenario(settings.scenarioLines, settings.scenarioCollums, settings.scenarioBlockWidth, settings.scenarioBlockHeight, settings.scenarioId);
 
@@ -1244,14 +666,15 @@ function lost(settings, perdeu) {
 
 function win(settings) {
     if (settings.starCount == 0) {
-        //manaUpdate(settings);
-        stop();
+        //window.stop();
+
         alert('venceu')
         console.log(settings.manaCount)
-        level++
+        window.level++
+        console.log(window.level)
         lvls[level].manaCount = manaUpdate(settings);
         console.log(lvls[level].manaCount)
-        startGame(lvls[level])
+        window.location.replace("./lvl2.html")
     }
 }
 
@@ -1347,17 +770,16 @@ function getScript(id, r) {
 
 
 function manaUpdate(settings) {
-
+    
     for (x = 0; x < 5; x++) {
         script = getScript(settings.coderSpaceId, x);
         for (y = 0; y < 7; y++) {
-            //console.log("manaUpdadte")
             //console.log(x + script[0][y])
             if (script[0][y] != " ") {
-                settings.manaCount--
+                settings.manaCount-- 
             }
         }
-
+        
     }
 
     return settings.manaCount
@@ -1365,11 +787,11 @@ function manaUpdate(settings) {
 
 function disableBtn(id) {
     document.querySelector(id).disabled = true;
-}
-
-function enableBtn(id) {
+  }
+  
+  function enableBtn(id) {
     document.querySelector(id).disabled = false;
-}
+  }
 
 // ------ Standby Functions ------
 
