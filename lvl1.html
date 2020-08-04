@@ -5,18 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
         <title>Game for TO WIN!</title>
+        <script src="./js/aux.js"></script>
+        <script src="./js/actions.js"></script>
+        <script src="./js/map.js"></script>
+        <script src="./js/levels.js"></script>
         <script src="./js/game.js"></script>
-        <script src="./js/maps/lvl1.js"></script>
         <link rel="stylesheet" href="./css/estilo.css">
     </head>
     
-<body onload="startGame(level1)">
-    <button onClick = "startGame(level1)" >lel</button>
-
-<script>
+<body onload="startLevel(lvls[0])">
 
 
-</script>
 
 <div id=scenario></div>
 </br>
@@ -34,11 +33,9 @@
     <button class="btn" onclick="chooseSpeed(300)">3x</button>
     </br>
     -- <button class="btn" onclick="stopScript(setup)">Stop</button> -->
-    <button class="btn" id="goBtn" onclick="startScript(level1)">GO!</button>
-    
+    <button class="btn" onclick="startScript(lvls[0])">GO!</button>
 
 </div>
-
 
 
 <div align="center">
@@ -49,10 +46,10 @@
     
     </br>
     </br>
-    <button id="delCode" onclick="delCode(level1)"></button>
-    <button id="squareRed" onclick="addCollor(level1, 'red')"></button>
-    <button id="squareBlue" onclick="addCollor(level1, 'blue')"></button>
-    <button id="squareGreen" onclick="addCollor(level1, 'green')"></button>
+    <button id="delCode" onclick="delCode(lvls[0])"></button>
+    <button id="squareRed" onclick="addCollor(lvls[0], 'red')"></button>
+    <button id="squareBlue" onclick="addCollor(lvls[0], 'blue')"></button>
+    <button id="squareGreen" onclick="addCollor(lvls[0], 'green')"></button>
     </br>
     </br>
     <button id="btn-f1" onclick="addFunction('f1')"></button>
@@ -66,7 +63,15 @@
 
 
 
+
+
+
 </body>
 
-
+<script>
+    var level = 1;
+    createScenario();
+    createCoderSpace();
+    
+</script>
 </html>
