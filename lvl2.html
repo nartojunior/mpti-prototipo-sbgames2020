@@ -5,22 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
         <title>Game for TO WIN!</title>
-        
-        <script src="./js/game1-5.js"></script>
+        <script src="./js/aux.js"></script>
+        <script src="./js/actions.js"></script>
+        <script src="./js/map.js"></script>
+        <script src="./js/levels.js"></script>
+        <script src="./js/game.js"></script>
         <link rel="stylesheet" href="./css/estilo.css">
     </head>
     
-<body onload="startGame(lvls[1])">
-    <button onClick = "startGame(level1)" >lel</button>
+<body onload="startLevel(lvls[1])">
 
-<script>
 
-</script>
 
 <div id=scenario></div>
 </br>
 </br>
 <div id=coderSpace></div>
+
+
 
 </br>
 
@@ -31,11 +33,9 @@
     <button class="btn" onclick="chooseSpeed(300)">3x</button>
     </br>
     -- <button class="btn" onclick="stopScript(setup)">Stop</button> -->
-    <button class="btn" id="goBtn" onclick="startScript(lvls[1])">GO!</button>
-    
+    <button class="btn" onclick="startScript(lvls[1])">GO!</button>
 
 </div>
-
 
 
 <div align="center">
@@ -63,7 +63,15 @@
 
 
 
+
+
+
 </body>
 
-
+<script>
+    var level = 2;
+    createScenario();
+    createCoderSpace();
+    
+</script>
 </html>
