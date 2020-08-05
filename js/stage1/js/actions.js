@@ -12,10 +12,10 @@ function move(settings) {
 
     //document.getElementById(settings.scenarioId + settings.runnerPosition[0] + '_' + settings.runnerPosition[1]).style.background = "white";
     colisions(settings);
-    if(win(settings)){
+    if (win(settings)) {
         lost(settings, false);
     };
-    
+
 }
 
 function rotateClock(settings) {
@@ -38,6 +38,7 @@ function rotateCounterClock(settings) {
 
 function addCollor(color) {
 
+    
     document.getElementById(lvls[level].coderPosition).style.backgroundColor = color;
 
 }
@@ -191,9 +192,9 @@ function execFunction(settings, script) {
 
 }
 
-function delCode(color) {
+function delCode() {
 
-    document.getElementById(lvls[level].coderPosition).style.backgroundColor = color;
+    document.getElementById(lvls[level].coderPosition).style.backgroundColor = "silver";
     document.getElementById(lvls[level].coderPosition).style.backgroundImage = "none";
     document.getElementById(lvls[level].coderPosition).innerHTML = "";
 
@@ -229,13 +230,20 @@ function win(settings) {
         stop();
         alert('venceu')
         console.log(settings.manaCount)
-        
+
         lvls[level].manaCount = manaUpdate(settings);
         console.log(lvls[level].manaCount)
         startLevel(lvls[level])
         level++;
-        window.location.assign('./lvl' + level + '.html')
-        return false;
+        if (level == 6) {
+            window.alert("Para passar para o próximo estágio envie o print com as suas soluções");
+            level = 1;
+            window.location.assign('./lvl' + level + '.html');
+            return false;
+        } else {
+            window.location.assign('./lvl' + level + '.html')
+            return false;
+        }
     } else {
         return true;
     }
